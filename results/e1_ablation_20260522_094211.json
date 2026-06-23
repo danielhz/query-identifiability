@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "experiment": "e1_ablation",
+    "timestamp": "20260522_094211",
+    "n_attrs": 5,
+    "domain_size": 2,
+    "n_fds_total": 4,
+    "rho_levels": [
+      0.0,
+      1.0
+    ],
+    "architectures": [
+      "mlp",
+      "set_transformer",
+      "gnn_og",
+      "closure_aware",
+      "vanilla_overlap",
+      "majority_vote"
+    ],
+    "seeds": [
+      0
+    ]
+  },
+  "results": [
+    {
+      "model": "mlp",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_loss": 0.601614,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "set_transformer",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_loss": 0.417103,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "gnn_og",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_loss": 0.555915,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "closure_aware",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false
+    },
+    {
+      "model": "vanilla_overlap",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_loss": 0.898188,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "majority_vote",
+      "rho": 0.0,
+      "n_fds_revealed": 0,
+      "n_fds_total": 4,
+      "certified": false,
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_loss": 0.688361,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "mlp",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_loss": 0.708737,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "set_transformer",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.494091,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "gnn_og",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 0.94,
+      "test_loss": 0.581197,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "closure_aware",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_loss": 0.570173,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "vanilla_overlap",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_loss": 0.785046,
+      "n_epochs": 10,
+      "stopped_early": false
+    },
+    {
+      "model": "majority_vote",
+      "rho": 1.0,
+      "n_fds_revealed": 4,
+      "n_fds_total": 4,
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_loss": 0.688361,
+      "n_epochs": 10,
+      "stopped_early": false
+    }
+  ]
+}

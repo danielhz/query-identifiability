@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "query-identifiability: certification and minimum augmentation for identifiable conjunctive queries in multi-source integration"
+abstract: >-
+  Tools and experiments for certifying when a Boolean conjunctive query is
+  identifiable from interface-visible views (CheckCert), prescribing the minimum
+  overlap augmentation when it is not (Greedy-MinAug), and constructing explicit
+  non-identifiability witnesses.
+type: software
+authors:
+  - family-names: Thapa
+    given-names: Ratan Bahadur
+  - family-names: Hernández
+    given-names: Daniel
+license: MIT
+repository-code: "https://github.com/danielhz/query-identifiability"
+version: "0.1.0"

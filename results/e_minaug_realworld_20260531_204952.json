@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "experiment": "e_minaug_realworld",
+    "timestamp": "20260531_204952",
+    "datasets": [
+      "wdc",
+      "bibinteg"
+    ],
+    "system": {
+      "hostname": "aisa-mgmt01.ki.uni-stuttgart.de",
+      "os": "Linux 5.14.0-611.54.6.el9_7.x86_64",
+      "cpu_count": 32,
+      "python_version": "3.11.3",
+      "torch_version": "2.3.0+cu121",
+      "torch_geometric_version": "2.5.0",
+      "numpy_version": "2.4.6",
+      "scipy_version": "1.17.1",
+      "sklearn_version": "1.8.0",
+      "cuda_available": false,
+      "cuda_version": "12.1",
+      "gpu_name": null,
+      "git_commit": "95c4443c70ed3ac94a8bbf97e3b04a359162e8d7",
+      "slurm_job_id": null,
+      "slurm_array_task_id": null
+    }
+  },
+  "results": [
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "certified_before": true,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "uncovered_attrs": [],
+      "n_candidates": 0,
+      "n_actions_greedy": 0,
+      "selected_actions": [],
+      "verified_certified_after": true,
+      "greedy_time_us": 6.32
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_cheap",
+      "certified_before": true,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "uncovered_attrs": [],
+      "n_candidates": 0,
+      "n_actions_greedy": 0,
+      "selected_actions": [],
+      "verified_certified_after": true,
+      "greedy_time_us": 3.79
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_highly_rated",
+      "certified_before": false,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "uncovered_attrs": [
+        4
+      ],
+      "n_candidates": 1,
+      "n_actions_greedy": 1,
+      "selected_actions": [
+        [
+          4
+        ]
+      ],
+      "verified_certified_after": true,
+      "greedy_time_us": 9.201
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_reviewed",
+      "certified_before": false,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "uncovered_attrs": [
+        5,
+        6
+      ],
+      "n_candidates": 3,
+      "n_actions_greedy": 1,
+      "selected_actions": [
+        [
+          5,
+          6
+        ]
+      ],
+      "verified_certified_after": true,
+      "greedy_time_us": 16.38
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_popular",
+      "certified_before": false,
+      "n_atoms": 2,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "uncovered_attrs": [
+        4,
+        5,
+        6
+      ],
+      "n_candidates": 6,
+      "n_actions_greedy": 2,
+      "selected_actions": [
+        [
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "verified_certified_after": true,
+      "greedy_time_us": 25.43
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "certified_before": true,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "uncovered_attrs": [],
+      "n_candidates": 0,
+      "n_actions_greedy": 0,
+      "selected_actions": [],
+      "verified_certified_after": true,
+      "greedy_time_us": 4.44
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_doi",
+      "certified_before": true,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "uncovered_attrs": [],
+      "n_candidates": 0,
+      "n_actions_greedy": 0,
+      "selected_actions": [],
+      "verified_certified_after": true,
+      "greedy_time_us": 3.68
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_large_team",
+      "certified_before": true,
+      "n_atoms": 1,
+      "full_footprint": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "aug_overlap_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "uncovered_attrs": [],
+      "n_candidates": 0,
+      "n_actions_greedy": 0,
+      "selected_actions": [],
+      "verified_certified_after": true,
+      "greedy_time_us": 3.34
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "dataset": "OpenAlex x DBLP (cross-source, join on DOI)",
+  "n_dblp": 6000,
+  "n_openalex": 5874,
+  "n_joined_raw": 5874,
+  "n_paratext_dropped": 0,
+  "n_joined": 5874,
+  "join_coverage": 0.979,
+  "attributes": {
+    "title (normalized)": {
+      "n": 5874,
+      "n_agree": 5565,
+      "n_conflict": 309,
+      "hold_rate": 0.9473953013278856,
+      "witnesses": [
+        {
+          "doi": "10.1002/wcm.931",
+          "dblp": "Local replacement for route recovery on a collaborative mobile ad hoc network.",
+          "openalex": "Local replacement for route recovery on a collaborative mobile<i>ad hoc</i>network"
+        },
+        {
+          "doi": "10.1007/1-4020-8143-x_25",
+          "dblp": "Improving Secure Device Insertion in Home Ad-hoc Networks Keyword Latencies.",
+          "openalex": "Improving Secure Device Insertion in Home Ad Hoc Networks"
+        },
+        {
+          "doi": "10.1007/3-540-06473-7_31",
+          "dblp": "An Interpretative Performance Monitor for Time Sharing System Evaluation (Abstract).",
+          "openalex": "An interpretative performance monitor for time sharing system evaluation"
+        },
+        {
+          "doi": "10.1007/3-540-07623-9_303",
+          "dblp": "Contribution to Dubovitsky and Milyutin's Optimization Formalism.",
+          "openalex": "Contribution to Dubovitskiy and Milyutin's optimization formalism"
+        },
+        {
+          "doi": "10.1007/3-540-44520-x_81",
+          "dblp": "Complete Exchange Algorithms for Meshes and Tori Using a Systematic Approach (Research Note).",
+          "openalex": "Complete Exchange Algorithms for Meshes and Tori Using a Systematic Approach"
+        },
+        {
+          "doi": "10.1007/3-540-63930-6_131",
+          "dblp": "Robust Epipolar Geometry Estimation Using Genetic Algorithm.",
+          "openalex": "Robust epipolar geometry using genetic algorithm"
+        },
+        {
+          "doi": "10.1007/978-3-030-87571-8_66",
+          "dblp": "Design and Implementation of Annotation System for Character Behavior & Event Based on Spring Boot.",
+          "openalex": "Design and Implementation of\u00a0Annotation System for Character Behavior &amp; Event Based on Spring Boot"
+        },
+        {
+          "doi": "10.1007/978-3-031-38530-8_7",
+          "dblp": "On-Campus Hands-On Ethical Hacking Course - Design, Deployment and Lessons Learned.",
+          "openalex": "On-Campus Hands-On Ethical Hacking Course"
+        }
+      ]
+    },
+    "year (exact)": {
+      "n": 5874,
+      "n_agree": 4876,
+      "n_conflict": 998,
+      "hold_rate": 0.8300987402110998,
+      "witnesses": [
+        {
+          "doi": "10.1002/aisy.202100166",
+          "dblp": "2022",
+          "openalex": "2021"
+        },
+        {
+          "doi": "10.1002/aisy.202500572",
+          "dblp": "2026",
+          "openalex": "2025"
+        },
+        {
+          "doi": "10.1002/cae.21879",
+          "dblp": "2018",
+          "openalex": "2017"
+        },
+        {
+          "doi": "10.1002/cpe.3848",
+          "dblp": "2017",
+          "openalex": "2016"
+        },
+        {
+          "doi": "10.1002/cpe.4046",
+          "dblp": "2017",
+          "openalex": "2016"
+        },
+        {
+          "doi": "10.1002/cpe.4423",
+          "dblp": "2019",
+          "openalex": "2018"
+        },
+        {
+          "doi": "10.1002/cpe.6056",
+          "dblp": "2021",
+          "openalex": "2020"
+        },
+        {
+          "doi": "10.1002/cta.1988",
+          "dblp": "2015",
+          "openalex": "2014"
+        }
+      ]
+    },
+    "year (\u00b11)": {
+      "n": 5874,
+      "n_agree": 5670,
+      "n_conflict": 204,
+      "hold_rate": 0.965270684371808,
+      "witnesses": [
+        {
+          "doi": "10.1002/dac.5344",
+          "dblp": "2025",
+          "openalex": "2022"
+        },
+        {
+          "doi": "10.1007/0-387-23152-8_40",
+          "dblp": "2004",
+          "openalex": "2006"
+        },
+        {
+          "doi": "10.1007/10719871_9",
+          "dblp": "1998",
+          "openalex": "2000"
+        },
+        {
+          "doi": "10.1007/3-540-46138-8_37",
+          "dblp": "2002",
+          "openalex": "2007"
+        },
+        {
+          "doi": "10.1007/3-540-56689-9_51",
+          "dblp": "1991",
+          "openalex": "1993"
+        },
+        {
+          "doi": "10.1007/978-0-387-37831-2_2",
+          "dblp": "2005",
+          "openalex": "2007"
+        },
+        {
+          "doi": "10.1007/978-3-030-06155-5_23",
+          "dblp": "2016",
+          "openalex": "2019"
+        },
+        {
+          "doi": "10.1007/978-3-030-06179-1_41",
+          "dblp": "2017",
+          "openalex": "2019"
+        }
+      ]
+    },
+    "venue (raw string)": {
+      "n": 5874,
+      "n_agree": 291,
+      "n_conflict": 5583,
+      "hold_rate": 0.04954034729315628,
+      "witnesses": [
+        {
+          "doi": "10.1002/(sici)1097-007x(199805/06)26:3<301::aid-cta13>3.0.co;2-e",
+          "dblp": "Int. J. Circuit Theory Appl.",
+          "openalex": "International Journal of Circuit Theory and Applications"
+        },
+        {
+          "doi": "10.1002/(sici)1097-0118(200005)34:1<9::aid-jgt2>3.0.co;2-o",
+          "dblp": "J. Graph Theory",
+          "openalex": "Journal of Graph Theory"
+        },
+        {
+          "doi": "10.1002/(sici)1099-1506(199701/02)4:1<43::aid-nla99>3.0.co;2-z",
+          "dblp": "Numer. Linear Algebra Appl.",
+          "openalex": "Numerical Linear Algebra with Applications"
+        },
+        {
+          "doi": "10.1002/(sici)1099-1670(1997120)3:4<199::aid-spip91>3.0.co;2-9",
+          "dblp": "Softw. Process. Improv. Pract.",
+          "openalex": "Software Process Improvement and Practice"
+        },
+        {
+          "doi": "10.1002/1097-4571(2000)9999:9999<::aid-asi1039>3.0.co;2-o",
+          "dblp": "J. Am. Soc. Inf. Sci.",
+          "openalex": "Journal of the American Society for Information Science"
+        },
+        {
+          "doi": "10.1002/1098-111x(200012)15:12<1157::aid-int3>3.0.co;2-v",
+          "dblp": "Int. J. Intell. Syst.",
+          "openalex": "International Journal of Intelligent Systems"
+        },
+        {
+          "doi": "10.1002/aisy.202100166",
+          "dblp": "Adv. Intell. Syst.",
+          "openalex": "Advanced Intelligent Systems"
+        },
+        {
+          "doi": "10.1002/aisy.202500572",
+          "dblp": "Adv. Intell. Syst.",
+          "openalex": "Advanced Intelligent Systems"
+        }
+      ]
+    },
+    "venue (normalized)": {
+      "n": 5874,
+      "n_agree": 563,
+      "n_conflict": 5311,
+      "hold_rate": 0.09584610146407899,
+      "witnesses": [
+        {
+          "doi": "10.1002/(sici)1097-007x(199805/06)26:3<301::aid-cta13>3.0.co;2-e",
+          "dblp": "Int. J. Circuit Theory Appl.",
+          "openalex": "International Journal of Circuit Theory and Applications"
+        },
+        {
+          "doi": "10.1002/(sici)1099-1506(199701/02)4:1<43::aid-nla99>3.0.co;2-z",
+          "dblp": "Numer. Linear Algebra Appl.",
+          "openalex": "Numerical Linear Algebra with Applications"
+        },
+        {
+          "doi": "10.1002/(sici)1099-1670(1997120)3:4<199::aid-spip91>3.0.co;2-9",
+          "dblp": "Softw. Process. Improv. Pract.",
+          "openalex": "Software Process Improvement and Practice"
+        },
+        {
+          "doi": "10.1002/1097-4571(2000)9999:9999<::aid-asi1039>3.0.co;2-o",
+          "dblp": "J. Am. Soc. Inf. Sci.",
+          "openalex": "Journal of the American Society for Information Science"
+        },
+        {
+          "doi": "10.1002/1098-111x(200012)15:12<1157::aid-int3>3.0.co;2-v",
+          "dblp": "Int. J. Intell. Syst.",
+          "openalex": "International Journal of Intelligent Systems"
+        },
+        {
+          "doi": "10.1002/aisy.202100166",
+          "dblp": "Adv. Intell. Syst.",
+          "openalex": "Advanced Intelligent Systems"
+        },
+        {
+          "doi": "10.1002/aisy.202500572",
+          "dblp": "Adv. Intell. Syst.",
+          "openalex": "Advanced Intelligent Systems"
+        },
+        {
+          "doi": "10.1002/asi.4630330313",
+          "dblp": "J. Am. Soc. Inf. Sci.",
+          "openalex": "Journal of the American Society for Information Science"
+        }
+      ]
+    },
+    "n_authors (exact)": {
+      "n": 5874,
+      "n_agree": 5797,
+      "n_conflict": 77,
+      "hold_rate": 0.9868913857677902,
+      "witnesses": [
+        {
+          "doi": "10.1007/978-3-540-72434-6_76",
+          "dblp": "6",
+          "openalex": "5"
+        },
+        {
+          "doi": "10.1007/978-3-642-76081-5_61",
+          "dblp": "15",
+          "openalex": "16"
+        },
+        {
+          "doi": "10.1007/s11277-023-10752-2",
+          "dblp": "0",
+          "openalex": "5"
+        },
+        {
+          "doi": "10.1007/s11548-022-02663-7",
+          "dblp": "2",
+          "openalex": "1"
+        },
+        {
+          "doi": "10.1007/s12652-020-02371-7",
+          "dblp": "0",
+          "openalex": "2"
+        },
+        {
+          "doi": "10.1016/0097-3165(75)90005-9",
+          "dblp": "1",
+          "openalex": "2"
+        },
+        {
+          "doi": "10.1016/j.artmed.2018.06.006",
+          "dblp": "0",
+          "openalex": "6"
+        },
+        {
+          "doi": "10.1016/j.cie.2011.06.012",
+          "dblp": "2",
+          "openalex": "4"
+        }
+      ]
+    }
+  }
+}

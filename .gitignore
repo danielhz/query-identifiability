@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files (track with DVC or similar; not git)
+# Note: data/ is a Python source package — only exclude raw data subdirs
+data/raw/
+data/processed/
+data/cache/
+*.csv
+*.tsv
+*.jsonl
+*.jsonl.gz
+*.pkl
+*.h5
+*.hdf5
+*.parquet
+
+# Model checkpoints and experiment outputs
+checkpoints/
+# results/ is tracked for FAIR reproducibility (raw experiment outputs)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# SLURM job logs (reproducible by re-running sbatch scripts)
+logs/
+
+# Anonymization key — maps real cluster hostnames; NEVER commit
+anon_key.json
+
+# Derived anonymized artifact bundle
+results_anon/
+
+# Weights & Biases
+wandb/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.msgs/

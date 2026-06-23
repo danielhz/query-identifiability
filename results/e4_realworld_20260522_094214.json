@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "experiment": "e4_realworld",
+    "timestamp": "20260522_094214",
+    "datasets": [
+      "bibinteg",
+      "wdc"
+    ],
+    "architectures": [
+      "mlp",
+      "set_transformer",
+      "gnn_og",
+      "closure_aware",
+      "vanilla_overlap",
+      "majority_vote"
+    ],
+    "seeds": [
+      0
+    ],
+    "mock": true
+  },
+  "results": [
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "mlp",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.651812,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "set_transformer",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.515995,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "gnn_og",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.418594,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "closure_aware",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.418594,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "vanilla_overlap",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.433333,
+      "test_loss": 0.712962,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "model": "majority_vote",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "aug_overlap_size": 7,
+      "feature_dim": 112,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.69065,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "mlp",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.6,
+      "test_loss": 0.687725,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "set_transformer",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.7,
+      "test_loss": 0.664831,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "gnn_og",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.6,
+      "test_loss": 0.683263,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "closure_aware",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.6,
+      "test_loss": 0.683263,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "vanilla_overlap",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.366667,
+      "test_loss": 0.71057,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "model": "majority_vote",
+      "certified": true,
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 80,
+      "feature_domain": 16,
+      "seed": 0,
+      "test_accuracy": 0.6,
+      "test_loss": 0.693047,
+      "n_epochs": 5,
+      "stopped_early": false,
+      "n_train": 60,
+      "n_test": 30
+    }
+  ]
+}

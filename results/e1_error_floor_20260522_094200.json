@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "experiment": "e1_error_floor",
+    "timestamp": "20260522_094200",
+    "n_cert_queries": 2,
+    "n_noncert_queries": 2,
+    "n_train": 80,
+    "n_test": 50,
+    "architectures": [
+      "mlp",
+      "set_transformer",
+      "gnn_og",
+      "closure_aware",
+      "vanilla_overlap",
+      "majority_vote"
+    ],
+    "seeds": [
+      0
+    ]
+  },
+  "results": [
+    {
+      "model": "mlp",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.0,
+      "test_loss": 0.740668,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.802,
+      "query_type": "certified"
+    },
+    {
+      "model": "set_transformer",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.94,
+      "test_loss": 0.394052,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.089,
+      "query_type": "certified"
+    },
+    {
+      "model": "gnn_og",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.94,
+      "test_loss": 0.570121,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.055,
+      "query_type": "certified"
+    },
+    {
+      "model": "closure_aware",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.551889,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.055,
+      "query_type": "certified"
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.02,
+      "test_loss": 0.874725,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.017,
+      "query_type": "certified"
+    },
+    {
+      "model": "majority_vote",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.685678,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.014,
+      "query_type": "certified"
+    },
+    {
+      "model": "mlp",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.534918,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.024,
+      "query_type": "certified"
+    },
+    {
+      "model": "set_transformer",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.369399,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.086,
+      "query_type": "certified"
+    },
+    {
+      "model": "gnn_og",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.0,
+      "test_loss": 0.758148,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.055,
+      "query_type": "certified"
+    },
+    {
+      "model": "closure_aware",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.0,
+      "test_loss": 0.757822,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.054,
+      "query_type": "certified"
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.508598,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.016,
+      "query_type": "certified"
+    },
+    {
+      "model": "majority_vote",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_loss": 0.685678,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.014,
+      "query_type": "certified"
+    },
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.22,
+      "test_loss": 0.720813,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.024,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "set_transformer",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.7,
+      "test_loss": 0.593769,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.085,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "gnn_og",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.8,
+      "test_loss": 0.613907,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.055,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.14,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.28,
+      "test_loss": 0.776495,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.017,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.74,
+      "test_loss": 0.689579,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.014,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.24,
+      "test_loss": 0.718861,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.024,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "set_transformer",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.88,
+      "test_loss": 0.421046,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.085,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "gnn_og",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.8,
+      "test_loss": 0.614023,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.054,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.24,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.26,
+      "test_loss": 0.774647,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.016,
+      "query_type": "noncertified"
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.86,
+      "test_loss": 0.68778,
+      "n_epochs": 15,
+      "stopped_early": false,
+      "train_time_s": 0.015,
+      "query_type": "noncertified"
+    }
+  ]
+}

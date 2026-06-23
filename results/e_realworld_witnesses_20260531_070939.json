@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "experiment": "e_realworld_witnesses",
+    "timestamp": "20260531_070939",
+    "data_source": "real",
+    "n_bib_records": 10000,
+    "n_wdc_records": 15000,
+    "n_queries": 6,
+    "n_certified": 5,
+    "n_scanned": 1,
+    "n_witnesses": 1,
+    "system": {
+      "hostname": "aisa-mgmt01.ki.uni-stuttgart.de",
+      "os": "Linux 5.14.0-611.54.6.el9_7.x86_64",
+      "cpu_count": 32,
+      "python_version": "3.11.3",
+      "torch_version": "2.3.0+cu121",
+      "torch_geometric_version": "2.5.0",
+      "numpy_version": "2.4.6",
+      "scipy_version": "1.17.1",
+      "sklearn_version": "1.8.0",
+      "cuda_available": false,
+      "cuda_version": "12.1",
+      "gpu_name": null,
+      "git_commit": "7517a37c499466ecfba4336431792bc6c6792cd2",
+      "slurm_job_id": null,
+      "slurm_array_task_id": null
+    }
+  },
+  "results": [
+    {
+      "dataset": "bibinteg",
+      "query": "Q_venue",
+      "certified": true,
+      "footprint": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "n_records": 10000,
+      "scan_run": false,
+      "witness_found": null,
+      "n_records_scanned": null,
+      "n_obs_groups": null,
+      "witness": null,
+      "elapsed_s": null,
+      "note": "certified \u2014 witness provably absent"
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_doi",
+      "certified": true,
+      "footprint": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "n_records": 10000,
+      "scan_run": false,
+      "witness_found": null,
+      "n_records_scanned": null,
+      "n_obs_groups": null,
+      "witness": null,
+      "elapsed_s": null,
+      "note": "certified \u2014 witness provably absent"
+    },
+    {
+      "dataset": "bibinteg",
+      "query": "Q_large_team",
+      "certified": true,
+      "footprint": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "n_records": 10000,
+      "scan_run": false,
+      "witness_found": null,
+      "n_records_scanned": null,
+      "n_obs_groups": null,
+      "witness": null,
+      "elapsed_s": null,
+      "note": "certified \u2014 witness provably absent"
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_available",
+      "certified": true,
+      "footprint": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "n_records": 15000,
+      "scan_run": false,
+      "witness_found": null,
+      "n_records_scanned": null,
+      "n_obs_groups": null,
+      "witness": null,
+      "elapsed_s": null,
+      "note": "certified \u2014 witness provably absent"
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_cheap",
+      "certified": true,
+      "footprint": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "n_records": 15000,
+      "scan_run": false,
+      "witness_found": null,
+      "n_records_scanned": null,
+      "n_obs_groups": null,
+      "witness": null,
+      "elapsed_s": null,
+      "note": "certified \u2014 witness provably absent"
+    },
+    {
+      "dataset": "wdc",
+      "query": "Q_highly_rated",
+      "certified": false,
+      "footprint": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_records": 15000,
+      "scan_run": true,
+      "elapsed_s": 0.0038,
+      "witness_found": true,
+      "n_records_scanned": 244,
+      "n_obs_groups": 239,
+      "witness": {
+        "w_true": [
+          [
+            1801,
+            8138,
+            0,
+            14,
+            4,
+            2,
+            0,
+            0
+          ]
+        ],
+        "w_false": [
+          [
+            1801,
+            8138,
+            0,
+            14,
+            2,
+            2,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

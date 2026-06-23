@@ -1,0 +1,6 @@
+# Development / CI tooling (used by `make ci`: fmt, lint, typecheck).
+# Pinned so formatting and type-checking are reproducible across machines —
+# ruff's formatter style changes between releases, so the version must be fixed.
+# Runtime deps and pytest live in requirements.txt.
+ruff==0.15.18
+mypy==2.1.0

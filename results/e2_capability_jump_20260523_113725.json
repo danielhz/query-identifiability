@@ -1,0 +1,370 @@
+{
+  "meta": {
+    "experiment": "e2_capability_jump",
+    "timestamp": "20260523_113725",
+    "n_attrs": 5,
+    "domain_size": 2,
+    "steps": [
+      "no FDs",
+      "+FD 0\u21921",
+      "+FD 0\u21922",
+      "+FD 0\u21923",
+      "+FD 0\u21924"
+    ],
+    "n_train": 500,
+    "n_val": 100,
+    "n_test": 500,
+    "n_tuples": 5,
+    "architectures": [
+      "mlp",
+      "closure_aware",
+      "majority_vote"
+    ],
+    "seeds": [
+      0
+    ],
+    "train_config": {
+      "hidden_dim": 64,
+      "epochs": 100,
+      "patience": 20,
+      "lr": 0.001,
+      "batch_size": 256,
+      "weight_decay": 1e-05,
+      "device": "cpu"
+    },
+    "system": {
+      "hostname": "aisa-mgmt01.ki.uni-stuttgart.de",
+      "os": "Linux 5.14.0-611.54.6.el9_7.x86_64",
+      "cpu_count": 32,
+      "python_version": "3.11.3",
+      "torch_version": "2.3.0+cu121",
+      "torch_geometric_version": "2.5.0",
+      "numpy_version": "2.4.6",
+      "scipy_version": "1.17.1",
+      "sklearn_version": "1.8.0",
+      "cuda_available": false,
+      "cuda_version": "12.1",
+      "gpu_name": null,
+      "git_commit": "2e7d9f3ccaf9d7ef5a56a670112ba9689294d2eb",
+      "slurm_job_id": null,
+      "slurm_array_task_id": null
+    }
+  },
+  "results": [
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.484,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.516,
+      "test_loss": 0.697998,
+      "n_epochs": 21,
+      "stopped_early": true,
+      "train_time_s": 0.813,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.516,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.484,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.498,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.502,
+      "test_loss": 0.693407,
+      "n_epochs": 46,
+      "stopped_early": true,
+      "train_time_s": 0.224,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.502,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.498,
+      "test_loss": 0.694125,
+      "n_epochs": 21,
+      "stopped_early": true,
+      "train_time_s": 0.105,
+      "step": 1,
+      "step_label": "+FD 0\u21921",
+      "aug_overlap": [
+        0,
+        1
+      ],
+      "aug_overlap_size": 2,
+      "feature_dim": 4
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.508,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.492,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "step": 1,
+      "step_label": "+FD 0\u21921",
+      "aug_overlap": [
+        0,
+        1
+      ],
+      "aug_overlap_size": 2,
+      "feature_dim": 4
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.544,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.456,
+      "test_loss": 0.691425,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.362,
+      "step": 1,
+      "step_label": "+FD 0\u21921",
+      "aug_overlap": [
+        0,
+        1
+      ],
+      "aug_overlap_size": 2,
+      "feature_dim": 4
+    },
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.622,
+      "test_balanced_accuracy": 0.62232,
+      "test_positive_rate": 0.514,
+      "test_loss": 0.650751,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.504,
+      "step": 2,
+      "step_label": "+FD 0\u21922",
+      "aug_overlap": [
+        0,
+        1,
+        2
+      ],
+      "aug_overlap_size": 3,
+      "feature_dim": 8
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.526,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.474,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "step": 2,
+      "step_label": "+FD 0\u21922",
+      "aug_overlap": [
+        0,
+        1,
+        2
+      ],
+      "aug_overlap_size": 3,
+      "feature_dim": 8
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.52,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.52,
+      "test_loss": 0.693137,
+      "n_epochs": 21,
+      "stopped_early": true,
+      "train_time_s": 0.074,
+      "step": 2,
+      "step_label": "+FD 0\u21922",
+      "aug_overlap": [
+        0,
+        1,
+        2
+      ],
+      "aug_overlap_size": 3,
+      "feature_dim": 8
+    },
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.81,
+      "test_balanced_accuracy": 0.586957,
+      "test_positive_rate": 0.77,
+      "test_loss": 0.434435,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.505,
+      "step": 3,
+      "step_label": "+FD 0\u21923",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "aug_overlap_size": 4,
+      "feature_dim": 16
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.238,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.762,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "step": 3,
+      "step_label": "+FD 0\u21923",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "aug_overlap_size": 4,
+      "feature_dim": 16
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.78,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.78,
+      "test_loss": 0.644202,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.421,
+      "step": 3,
+      "step_label": "+FD 0\u21923",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "aug_overlap_size": 4,
+      "feature_dim": 16
+    },
+    {
+      "model": "mlp",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.976,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.976,
+      "test_loss": 0.054649,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.505,
+      "step": 4,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "closure_aware",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.964,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.964,
+      "test_loss": 0.163276,
+      "n_epochs": 43,
+      "stopped_early": true,
+      "train_time_s": 0.792,
+      "step": 4,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "majority_vote",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.97,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.97,
+      "test_loss": 0.605991,
+      "n_epochs": 100,
+      "stopped_early": false,
+      "train_time_s": 0.361,
+      "step": 4,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    }
+  ]
+}

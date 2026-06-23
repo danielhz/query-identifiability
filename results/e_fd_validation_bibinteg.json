@@ -1,0 +1,145 @@
+{
+  "dataset": "BibInteg",
+  "key": [
+    "title",
+    "authors",
+    "year"
+  ],
+  "fds": {
+    "title/authors/year->venue": {
+      "source": "dblp",
+      "n_keys": 9992,
+      "n_violating": 5,
+      "hold_rate": 0.9994995996797438,
+      "witnesses": [
+        {
+          "key": {
+            "title": "The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research",
+            "authors": "Nathalie Percie du Sert; Viki Hurst; Amrita Ahluwalia; Sabina Alam; Marc T. Avey; Monya Baker; William J. Browne; Alejandra Clark; Innes C. Cuthill; Ulrich Dirnagl; Michael Emerson; Paul Garner; Stephen T. Holgate; David W. Howells; Natasha A. Karp; Stanley E. Lazic; Katie Lidster; Catriona MacCallum; Malcolm Macleod; Esther J. Pearl; Ole H. Petersen; Frances Rawle; Penny S. Reynolds; Kieron Rooney; Emily S. Sena; Shai D. Silberberg; Thomas Steckler; Hanno W\u00fcrbel",
+            "year": "2020"
+          },
+          "values": [
+            "British Journal of Pharmacology",
+            "Experimental Physiology",
+            "PLoS Biology"
+          ]
+        },
+        {
+          "key": {
+            "title": "Comparative Protein Structure Modeling Using MODELLER",
+            "authors": "Benjamin Webb; Andrej \u0160ali",
+            "year": "2016"
+          },
+          "values": [
+            "Current Protocols in Bioinformatics",
+            "Current Protocols in Protein Science"
+          ]
+        },
+        {
+          "key": {
+            "title": "A multisociety Delphi consensus statement on new fatty liver disease nomenclature",
+            "authors": "Mary E. Rinella; Jeffrey V. Lazarus; Vlad Ratziu; Sven Francque; Arun J. Sanyal; Fasiha Kanwal; Diana Romero; Manal F. Abdelmalek; Quentin M. Anstee; Juan Pablo Arab; Marco Arrese; Ram\u00f3n Bataller; Ulrich Beuers; J\u00e9r\u00f4me Boursier; Elisabetta Bugianesi; Christopher D. Byrne; Graciela Castro\u2010Narro; Abhijit Chowdhury; Helena Cortez\u2010Pinto; Donna R. Cryer; Kenneth Cusi; Mohamed El\u2010Kassas; Samuel Klein; Wayne Eskridge; Jian\u2010Gao Fan; Samer Gawrieh; Cynthia D. Guy; Stephen A. Harrison; Seung Up Kim; Bart G.P. Koot; Marko Korenjak; Kris V. Kowdley; Florence Lacaille; Rohit Loomba; Robert Mitchell-Thain; Timothy R. Morgan; Elisabeth E. Powell; Michael Roden; Manuel Romero\u2010G\u00f3mez; Marcelo Silva; Shivaram Prasad Singh; Silvia Sookoian; C Wendy Spearman; Dina Tiniakos; Luca Valenti; Miriam B. Vos; Vincent Wai\u2010Sun Wong; Stavra A. Xanthakos; Yusuf Y\u0131lmaz; Zobair M. Younossi; Ansley Hobbs; Marcela Villota\u2010Rivas; Philip N. Newsome",
+            "year": "2023"
+          },
+          "values": [
+            "Annals of Hepatology",
+            "Journal of Hepatology"
+          ]
+        },
+        {
+          "key": {
+            "title": "A new classification scheme for periodontal and peri\u2010implant diseases and conditions \u2013 Introduction and key changes from the 1999 classification",
+            "authors": "Jack G. Caton; Gary C. Armitage; Tord Berglundh; Iain Chapple; S\u00f8ren Jepsen; Kenneth S. Kornman; Brian L. Mealey; Panos N. Papapanou; Mariano Sanz; Maurizio S. Tonetti",
+            "year": "2018"
+          },
+          "values": [
+            "Journal Of Clinical Periodontology",
+            "Journal of Periodontology"
+          ]
+        },
+        {
+          "key": {
+            "title": "Peri\u2010implant diseases and conditions: Consensus report of workgroup 4 of the 2017 World Workshop on the Classification of Periodontal and Peri\u2010Implant Diseases and Conditions",
+            "authors": "Tord Berglundh; Gary C. Armitage; Maur\u00edcio G. Ara\u00fajo; Gustavo \u00c1vila\u2010Ortiz; Juan Blanco; Paulo M. Camargo; Stephen Chen; David L. Cochran; Jan Derks; Elena Figuero; Christoph H. F. H\u00e4mmerle; Lisa J. A. Heitz\u2010Mayfield; Guy Huynh\u2010Ba; Vincent J. Iacono; Ki\u2010Tae Koo; France Lambert; Laurie K. McCauley; Marc Quirynen; Stefan Renvert; Giovanni E. Salvi; Frank Schwarz; Dennis Tarnow; Cristiano Tomasi; Hom\u2010Lay Wang; Nicola U. Zitzmann",
+            "year": "2018"
+          },
+          "values": [
+            "Journal Of Clinical Periodontology",
+            "Journal of Periodontology"
+          ]
+        }
+      ]
+    },
+    "title/authors/year->doi": {
+      "source": "acm",
+      "n_keys": 9992,
+      "n_violating": 7,
+      "hold_rate": 0.9992994395516414,
+      "witnesses": [
+        {
+          "key": {
+            "title": "The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research",
+            "authors": "Nathalie Percie du Sert; Viki Hurst; Amrita Ahluwalia; Sabina Alam; Marc T. Avey; Monya Baker; William J. Browne; Alejandra Clark; Innes C. Cuthill; Ulrich Dirnagl; Michael Emerson; Paul Garner; Stephen T. Holgate; David W. Howells; Natasha A. Karp; Stanley E. Lazic; Katie Lidster; Catriona MacCallum; Malcolm Macleod; Esther J. Pearl; Ole H. Petersen; Frances Rawle; Penny S. Reynolds; Kieron Rooney; Emily S. Sena; Shai D. Silberberg; Thomas Steckler; Hanno W\u00fcrbel",
+            "year": "2020"
+          },
+          "values": [
+            "10.1111/bph.15193",
+            "10.1113/ep088870",
+            "10.1371/journal.pbio.3000410"
+          ]
+        },
+        {
+          "key": {
+            "title": "Comparative Protein Structure Modeling Using MODELLER",
+            "authors": "Benjamin Webb; Andrej \u0160ali",
+            "year": "2016"
+          },
+          "values": [
+            "10.1002/cpbi.3",
+            "10.1002/cpps.20"
+          ]
+        },
+        {
+          "key": {
+            "title": "A multisociety Delphi consensus statement on new fatty liver disease nomenclature",
+            "authors": "Mary E. Rinella; Jeffrey V. Lazarus; Vlad Ratziu; Sven Francque; Arun J. Sanyal; Fasiha Kanwal; Diana Romero; Manal F. Abdelmalek; Quentin M. Anstee; Juan Pablo Arab; Marco Arrese; Ram\u00f3n Bataller; Ulrich Beuers; J\u00e9r\u00f4me Boursier; Elisabetta Bugianesi; Christopher D. Byrne; Graciela Castro\u2010Narro; Abhijit Chowdhury; Helena Cortez\u2010Pinto; Donna R. Cryer; Kenneth Cusi; Mohamed El\u2010Kassas; Samuel Klein; Wayne Eskridge; Jian\u2010Gao Fan; Samer Gawrieh; Cynthia D. Guy; Stephen A. Harrison; Seung Up Kim; Bart G.P. Koot; Marko Korenjak; Kris V. Kowdley; Florence Lacaille; Rohit Loomba; Robert Mitchell-Thain; Timothy R. Morgan; Elisabeth E. Powell; Michael Roden; Manuel Romero\u2010G\u00f3mez; Marcelo Silva; Shivaram Prasad Singh; Silvia Sookoian; C Wendy Spearman; Dina Tiniakos; Luca Valenti; Miriam B. Vos; Vincent Wai\u2010Sun Wong; Stavra A. Xanthakos; Yusuf Y\u0131lmaz; Zobair M. Younossi; Ansley Hobbs; Marcela Villota\u2010Rivas; Philip N. Newsome",
+            "year": "2023"
+          },
+          "values": [
+            "10.1016/j.aohep.2023.101133",
+            "10.1016/j.jhep.2023.06.003"
+          ]
+        },
+        {
+          "key": {
+            "title": "A new classification scheme for periodontal and peri\u2010implant diseases and conditions \u2013 Introduction and key changes from the 1999 classification",
+            "authors": "Jack G. Caton; Gary C. Armitage; Tord Berglundh; Iain Chapple; S\u00f8ren Jepsen; Kenneth S. Kornman; Brian L. Mealey; Panos N. Papapanou; Mariano Sanz; Maurizio S. Tonetti",
+            "year": "2018"
+          },
+          "values": [
+            "10.1002/jper.18-0157",
+            "10.1111/jcpe.12935"
+          ]
+        },
+        {
+          "key": {
+            "title": "FastQ Screen: A tool for multi-genome mapping and quality control",
+            "authors": "Steven Wingett; Simon Andrews",
+            "year": "2018"
+          },
+          "values": [
+            "10.12688/f1000research.15931.1",
+            "10.12688/f1000research.15931.2"
+          ]
+        }
+      ]
+    },
+    "title/authors/year->n_authors": {
+      "source": "semantic_scholar",
+      "n_keys": 9992,
+      "n_violating": 0,
+      "hold_rate": 1.0,
+      "witnesses": []
+    }
+  }
+}

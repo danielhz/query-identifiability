@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "experiment": "e2_capability_jump",
+    "timestamp": "20260523_113304",
+    "n_attrs": 5,
+    "domain_size": 2,
+    "steps": [
+      "no FDs",
+      "+FD 0\u21924"
+    ],
+    "n_train": 80,
+    "n_val": 20,
+    "n_test": 50,
+    "n_tuples": 5,
+    "architectures": [
+      "mlp",
+      "set_transformer",
+      "gnn_og",
+      "closure_aware",
+      "vanilla_overlap",
+      "majority_vote"
+    ],
+    "seeds": [
+      0
+    ],
+    "train_config": {
+      "hidden_dim": 16,
+      "epochs": 10,
+      "patience": 10,
+      "lr": 0.001,
+      "batch_size": 256,
+      "weight_decay": 1e-05,
+      "device": "cpu"
+    },
+    "system": {
+      "hostname": "aisa-mgmt01.ki.uni-stuttgart.de",
+      "os": "Linux 5.14.0-611.54.6.el9_7.x86_64",
+      "cpu_count": 32,
+      "python_version": "3.11.3",
+      "torch_version": "2.3.0+cu121",
+      "torch_geometric_version": "2.5.0",
+      "numpy_version": "2.4.6",
+      "scipy_version": "1.17.1",
+      "sklearn_version": "1.8.0",
+      "cuda_available": false,
+      "cuda_version": "12.1",
+      "gpu_name": null,
+      "git_commit": "2e7d9f3ccaf9d7ef5a56a670112ba9689294d2eb",
+      "slurm_job_id": null,
+      "slurm_array_task_id": null
+    }
+  },
+  "results": [
+    {
+      "model": "mlp",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_balanced_accuracy": NaN,
+      "test_positive_rate": 1.0,
+      "test_loss": 0.593361,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.785,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "set_transformer",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.98,
+      "test_loss": 0.399195,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.059,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "gnn_og",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.98,
+      "test_loss": 0.549376,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.028,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "closure_aware",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.693147,
+      "n_epochs": 0,
+      "stopped_early": false,
+      "train_time_s": 0.0,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.892748,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.011,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "majority_vote",
+      "certified": false,
+      "seed": 0,
+      "test_accuracy": 1.0,
+      "test_balanced_accuracy": NaN,
+      "test_positive_rate": 1.0,
+      "test_loss": 0.688161,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.01,
+      "step": 0,
+      "step_label": "no FDs",
+      "aug_overlap": [
+        0
+      ],
+      "aug_overlap_size": 1,
+      "feature_dim": 2
+    },
+    {
+      "model": "mlp",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.707633,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.016,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "set_transformer",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.517647,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.057,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "gnn_og",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.575677,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.053,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "closure_aware",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.96,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.575693,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.053,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "vanilla_overlap",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.04,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.96,
+      "test_loss": 0.791817,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.011,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    },
+    {
+      "model": "majority_vote",
+      "certified": true,
+      "seed": 0,
+      "test_accuracy": 0.98,
+      "test_balanced_accuracy": 0.5,
+      "test_positive_rate": 0.98,
+      "test_loss": 0.688361,
+      "n_epochs": 10,
+      "stopped_early": false,
+      "train_time_s": 0.01,
+      "step": 1,
+      "step_label": "+FD 0\u21924",
+      "aug_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aug_overlap_size": 5,
+      "feature_dim": 32
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]   # pycodestyle, pyflakes, isort
+ignore = [
+    "E501",   # line too long — formatter handles this
+]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true   # torch, matplotlib etc. have no stubs
+warn_unused_ignores = true
+warn_redundant_casts = true
+# Research code: don't enforce strict return-Any or untyped-def across the board
+disallow_untyped_defs = false
+warn_return_any = false
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+ignore_errors = true            # test files: assertions over types, not worth annotating
+
+[tool.coverage.run]
+source = ["."]
+omit = ["tests/*", "cluster/*", "*/.*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
