@@ -45,8 +45,10 @@ from datetime import datetime
 from itertools import combinations
 from pathlib import Path
 
+import data.amazon_google as ag
 import data.bibinteg as bib
 import data.crosskg_dblp as ckg
+import data.fodors_zagat as fz
 import data.wdc as wdc
 from data.utils import FD, augmented_overlap, fd_closure
 from experiments.runner import save_results
@@ -166,7 +168,14 @@ def _attr_name(dataset: str, attr: int) -> str:
         2: "large_team_bit",
         3: "source_id",
     }
-    table = {"wdc": wdc_names, "crosskg_dblp": crosskg_names}.get(dataset, bib_names)
+    amazon_google_names = {0: "pair_id", 1: "catalog_bit", 2: "expensive_bit", 3: "source_id"}
+    fodors_zagat_names = {0: "pair_id", 1: "segment_bit", 2: "cuisine_bit", 3: "source_id"}
+    table = {
+        "wdc": wdc_names,
+        "crosskg_dblp": crosskg_names,
+        "amazon_google": amazon_google_names,
+        "fodors_zagat": fodors_zagat_names,
+    }.get(dataset, bib_names)
     return table.get(attr, f"attr_{attr}")
 
 
@@ -357,6 +366,33 @@ def main(argv: list[str] | None = None) -> None:
         records.append(rec)
 
     # ------------------------------------------------------------------
+    # Amazon-Google and Fodors-Zagat (matched-pair, same model as CrossKG):
+    # the uncertified query needs the disagreed attribute exposed in the overlap.
+    # ------------------------------------------------------------------
+    for ds_name, mod, ds_queries in (
+        ("amazon_google", ag, [("Q_catalog", ag.Q_CATALOG), ("Q_expensive", ag.Q_EXPENSIVE)]),
+        ("fodors_zagat", fz, [("Q_segment", fz.Q_SEGMENT), ("Q_cuisine", fz.Q_CUISINE)]),
+    ):
+        overlap = mod.OVERLAP_SCHEMAS[0]
+        if args.verbose:
+            print(f"\n=== {ds_name} ===")
+            print(f"  Base overlap  : {sorted(overlap)}")
+            print(f"  Augmented Ω̃  : {sorted(augmented_overlap(overlap, mod.FDS))}")
+            print(f"  FDs           : {[(sorted(lhs), rhs) for lhs, rhs in mod.FDS]}")
+        for q_name, query in ds_queries:
+            records.append(
+                analyse_query(
+                    dataset=ds_name,
+                    query_name=q_name,
+                    query=query,
+                    config=mod.CONFIG,
+                    overlap=overlap,
+                    fds=mod.FDS,
+                    verbose=args.verbose,
+                )
+            )
+
+    # ------------------------------------------------------------------
     # Save
     # ------------------------------------------------------------------
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -367,7 +403,7 @@ def main(argv: list[str] | None = None) -> None:
         meta={
             "experiment": "e_minaug_realworld",
             "timestamp": ts,
-            "datasets": ["wdc", "bibinteg", "crosskg_dblp"],
+            "datasets": ["wdc", "bibinteg", "crosskg_dblp", "amazon_google", "fodors_zagat"],
         },
     )
     if args.verbose:

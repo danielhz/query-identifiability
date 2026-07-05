@@ -22,6 +22,12 @@ CrossKG-DBLP (OpenAlex × DBLP) — the real-witness dataset. Q_publisher is
                certified (both sources share the DOI). Q_large_team is not: the
                two independent sources genuinely disagree on author counts, so
                the scan finds *real* (not synthesized) non-identifiability witnesses.
+Amazon-Google — product-domain real-witness dataset. Q_catalog is certified
+               (both sources share the matched-pair identity). Q_expensive is
+               not: the two sources genuinely disagree on price → real witnesses.
+Fodors-Zagat — restaurant-domain real-witness dataset (breadth). Q_segment is
+               certified; Q_cuisine is not: the two guides categorize cuisine
+               differently → real witnesses.
 
 Usage
 -----
@@ -42,8 +48,10 @@ from typing import Any
 
 import numpy as np
 
+import data.amazon_google as ag
 import data.bibinteg as bib
 import data.crosskg_dblp as ckg
+import data.fodors_zagat as fz
 import data.wdc as wdc
 from data.exhaustive import evaluate_cq
 from data.synthetic import BooleanCQ, Config
@@ -162,6 +170,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--data-dir-bibinteg", type=Path, default=Path("data/raw/bibinteg"))
     p.add_argument("--data-dir-wdc", type=Path, default=Path("data/raw/wdc"))
     p.add_argument("--data-dir-crosskg", type=Path, default=Path("data/raw/crosskg_dblp"))
+    p.add_argument("--data-dir-amazon-google", type=Path, default=Path("data/raw/amazon_google"))
+    p.add_argument("--data-dir-fodors-zagat", type=Path, default=Path("data/raw/fodors_zagat"))
     p.add_argument("--mock-n", type=int, default=1000, help="Records per dataset in mock mode")
     p.add_argument("--output-dir", type=Path, default=Path("results"))
     args = p.parse_args(argv)
@@ -172,6 +182,8 @@ def main(argv: list[str] | None = None) -> None:
         bib_records = bib.make_mock_dataset(n=args.mock_n, seed=0)
         wdc_records = wdc.make_mock_dataset(n=args.mock_n, seed=0)
         ckg_records = ckg.make_mock_dataset(n=args.mock_n, seed=0)
+        ag_records = ag.make_mock_dataset(n=args.mock_n, seed=0)
+        fz_records = fz.make_mock_dataset(n=args.mock_n, seed=0)
         data_source = "mock"
     else:
         print(f"Loading BibInteg from {args.data_dir_bibinteg} …")
@@ -183,6 +195,16 @@ def main(argv: list[str] | None = None) -> None:
         print(f"Loading CrossKG-DBLP (OpenAlex × DBLP) from {args.data_dir_crosskg} …")
         ckg_records = ckg.load_dataset(args.data_dir_crosskg)
         print(f"  {len(ckg_records)} records loaded ({len(ckg_records) // 2} papers × 2 sources).")
+        print(f"Loading Amazon-Google from {args.data_dir_amazon_google} …")
+        ag_records = ag.load_dataset(args.data_dir_amazon_google)
+        print(
+            f"  {len(ag_records)} records loaded ({len(ag_records) // 2} matched pairs × 2 sources)."
+        )
+        print(f"Loading Fodors-Zagat from {args.data_dir_fodors_zagat} …")
+        fz_records = fz.load_dataset(args.data_dir_fodors_zagat)
+        print(
+            f"  {len(fz_records)} records loaded ({len(fz_records) // 2} matched pairs × 2 sources)."
+        )
         data_source = "real"
 
     # ----- Run queries -----
@@ -240,6 +262,42 @@ def main(argv: list[str] | None = None) -> None:
         )
         print(status)
 
+    # Amazon-Google: the product-domain real-witness dataset. Q_catalog is
+    # certified (both sources share the matched-pair identity); Q_expensive is
+    # not — the two sources genuinely disagree on price, yielding real witnesses.
+    amazon_google_queries = [
+        ("Q_catalog", ag.Q_CATALOG),
+        ("Q_expensive", ag.Q_EXPENSIVE),
+    ]
+    for q_name, cq in amazon_google_queries:
+        print(f"  AmazonGoogle / {q_name} …", end=" ", flush=True)
+        rec = run_query("amazon_google", q_name, cq, ag.CONFIG, ag_records)
+        results.append(rec)
+        status = (
+            "certified"
+            if rec["certified"]
+            else ("WITNESS FOUND" if rec.get("witness_found") else "no witness")
+        )
+        print(status)
+
+    # Fodors-Zagat: restaurant-domain real-witness dataset (breadth). Q_segment is
+    # certified (both guides share the matched-pair identity); Q_cuisine is not —
+    # the two guides genuinely categorize cuisine differently, yielding witnesses.
+    fodors_zagat_queries = [
+        ("Q_segment", fz.Q_SEGMENT),
+        ("Q_cuisine", fz.Q_CUISINE),
+    ]
+    for q_name, cq in fodors_zagat_queries:
+        print(f"  FodorsZagat / {q_name} …", end=" ", flush=True)
+        rec = run_query("fodors_zagat", q_name, cq, fz.CONFIG, fz_records)
+        results.append(rec)
+        status = (
+            "certified"
+            if rec["certified"]
+            else ("WITNESS FOUND" if rec.get("witness_found") else "no witness")
+        )
+        print(status)
+
     # ----- Summary -----
     print("\n=== Real-world witness scan ===")
     certified_n = sum(1 for r in results if r["certified"])
@@ -275,6 +333,8 @@ def main(argv: list[str] | None = None) -> None:
             "n_bib_records": len(bib_records),
             "n_wdc_records": len(wdc_records),
             "n_crosskg_records": len(ckg_records),
+            "n_amazon_google_records": len(ag_records),
+            "n_fodors_zagat_records": len(fz_records),
             "n_queries": len(results),
             "n_certified": certified_n,
             "n_scanned": len(scanned),

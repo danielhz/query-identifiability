@@ -55,7 +55,10 @@ from typing import Any, Callable, TypedDict
 
 import numpy as np
 
+import data.amazon_google as ag
 import data.bibinteg as bib
+import data.crosskg_dblp as ckg
+import data.fodors_zagat as fz
 import data.wdc as wdc
 import data.wikischolar as wiki
 from data.synthetic import BooleanCQ, Config
@@ -134,6 +137,44 @@ _DATASETS: dict[str, _DatasetDesc] = {
         "load_fn": wiki.load_dataset,
         "to_worlds": wiki.records_to_worlds,
         "data_dir": Path("data/raw/wikischolar"),
+        "source_col": None,
+        "records_per_world": 1,
+    },
+    # Cross-source matched-pair datasets (one record per source per matched pair).
+    # The overlap is the matched-pair identity (a near-unique id quantized into
+    # feature_domain bins), so the certified query reads its answer from an overlap
+    # bit (→ ~1.0) while the uncertified query's contested attribute is outside the
+    # overlap and unseen at test time (→ ~0.5 error floor).
+    "crosskg_dblp": {
+        "config": ckg.CONFIG,
+        "queries": [ckg.Q_PUBLISHER, ckg.Q_LARGE_TEAM],
+        "q_names": ["Q_publisher", "Q_large_team"],
+        "mock_fn": ckg.make_mock_dataset,
+        "load_fn": ckg.load_dataset,
+        "to_worlds": ckg.records_to_worlds,
+        "data_dir": Path("data/raw/crosskg_dblp"),
+        "source_col": None,
+        "records_per_world": 1,
+    },
+    "amazon_google": {
+        "config": ag.CONFIG,
+        "queries": [ag.Q_CATALOG, ag.Q_EXPENSIVE],
+        "q_names": ["Q_catalog", "Q_expensive"],
+        "mock_fn": ag.make_mock_dataset,
+        "load_fn": ag.load_dataset,
+        "to_worlds": ag.records_to_worlds,
+        "data_dir": Path("data/raw/amazon_google"),
+        "source_col": None,
+        "records_per_world": 1,
+    },
+    "fodors_zagat": {
+        "config": fz.CONFIG,
+        "queries": [fz.Q_SEGMENT, fz.Q_CUISINE],
+        "q_names": ["Q_segment", "Q_cuisine"],
+        "mock_fn": fz.make_mock_dataset,
+        "load_fn": fz.load_dataset,
+        "to_worlds": fz.records_to_worlds,
+        "data_dir": Path("data/raw/fodors_zagat"),
         "source_col": None,
         "records_per_world": 1,
     },

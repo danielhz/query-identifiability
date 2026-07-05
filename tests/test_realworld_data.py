@@ -16,8 +16,10 @@ from pathlib import Path
 
 import pytest
 
+import data.amazon_google as ag
 import data.bibinteg as bib
 import data.crosskg_dblp as ckg
+import data.fodors_zagat as fz
 import data.wdc as wdc
 from data.utils import augmented_overlap
 
@@ -449,3 +451,185 @@ class TestCrossKGCLI:
         ckg.main(["--mock"])
         out = capsys.readouterr().out
         assert "Mock CrossKG-DBLP" in out
+
+
+# ===========================================================================
+# Amazon-Google (product-domain real-witness dataset)
+# ===========================================================================
+
+
+class TestAmazonGoogleSchema:
+    def test_n_attrs(self):
+        assert ag.N_ATTRS == 4
+
+    def test_overlaps_are_intersections(self):
+        views = list(ag.VIEW_SCHEMAS.values())
+        for overlap in ag.OVERLAP_SCHEMAS:
+            assert sum(1 for v in views if overlap <= v) >= 2
+
+    def test_fd_lhs_in_attrs(self):
+        for lhs, rhs in ag.FDS:
+            assert lhs <= frozenset(range(ag.N_ATTRS))
+            assert rhs < ag.N_ATTRS
+
+    def test_config_valid(self):
+        assert ag.CONFIG.n_attrs == ag.N_ATTRS
+        assert ag.CONFIG.fds == ag.FDS
+
+
+class TestAmazonGoogleCertification:
+    def test_augmented_overlap(self):
+        assert augmented_overlap(ag.OVERLAP_SCHEMAS[0], ag.FDS) == frozenset({0, 1})
+
+    def test_q_catalog_certified(self):
+        assert ag.Q_CATALOG.is_certified(ag.CONFIG)
+
+    def test_q_expensive_not_certified(self):
+        assert not ag.Q_EXPENSIVE.is_certified(ag.CONFIG)
+
+
+class TestAmazonGoogleMock:
+    @pytest.fixture(scope="class")
+    def records(self):
+        return ag.make_mock_dataset(n=100, seed=0)
+
+    def test_count(self, records):
+        assert len(records) == 200  # one record per source per pair
+
+    def test_record_length(self, records):
+        for r in records:
+            assert len(r.to_world_row()) == ag.N_ATTRS
+
+    def test_overlap_agrees_across_sources(self, records):
+        """The two source-rows of a pair share pair_id and catalog_bit (the overlap)."""
+        by_pair: dict[int, set] = {}
+        for r in records:
+            by_pair.setdefault(r[0], set()).add(r[1])
+        for pair_id, cats in by_pair.items():
+            assert len(cats) == 1, f"pair {pair_id} disagrees on catalog_bit (overlap)"
+
+
+class TestAmazonGoogleWitness:
+    def test_mock_contains_real_witness(self):
+        import numpy as np
+
+        from data.witness import observation_key
+
+        aug = [augmented_overlap(o, ag.FDS) for o in ag.OVERLAP_SCHEMAS]
+        records = ag.make_mock_dataset(n=200, seed=0)
+        groups: dict[tuple, set] = {}
+        for r in records:
+            w = np.array([r.to_world_row()], dtype=np.int32)
+            groups.setdefault(observation_key(w, aug), set()).add(r[2])  # expensive_bit
+        assert [k for k, bits in groups.items() if len(bits) > 1], "mock must contain a witness"
+
+
+class TestAmazonGoogleWorldConversion:
+    def test_records_to_worlds_shape(self):
+        worlds = ag.records_to_worlds(ag.make_mock_dataset(n=10, seed=1))
+        assert len(worlds) == 20
+        for w in worlds:
+            assert len(w) == 1 and len(w[0]) == ag.N_ATTRS
+
+
+class TestAmazonGoogleErrors:
+    def test_load_raises_on_missing_data(self, tmp_path):
+        with pytest.raises(FileNotFoundError, match="amazon.csv"):
+            ag.load_dataset(tmp_path)
+
+
+class TestAmazonGoogleCLI:
+    def test_info_flag(self, capsys):
+        ag.main(["--info"])
+        assert "Amazon-Google" in capsys.readouterr().out
+
+    def test_mock_flag(self, capsys):
+        ag.main(["--mock"])
+        assert "Mock Amazon-Google" in capsys.readouterr().out
+
+
+# ===========================================================================
+# Fodors-Zagat (restaurant-domain real-witness dataset)
+# ===========================================================================
+
+
+class TestFodorsZagatSchema:
+    def test_n_attrs(self):
+        assert fz.N_ATTRS == 4
+
+    def test_overlaps_are_intersections(self):
+        views = list(fz.VIEW_SCHEMAS.values())
+        for overlap in fz.OVERLAP_SCHEMAS:
+            assert sum(1 for v in views if overlap <= v) >= 2
+
+    def test_fd_lhs_in_attrs(self):
+        for lhs, rhs in fz.FDS:
+            assert lhs <= frozenset(range(fz.N_ATTRS))
+            assert rhs < fz.N_ATTRS
+
+    def test_config_valid(self):
+        assert fz.CONFIG.n_attrs == fz.N_ATTRS
+        assert fz.CONFIG.fds == fz.FDS
+
+
+class TestFodorsZagatCertification:
+    def test_augmented_overlap(self):
+        assert augmented_overlap(fz.OVERLAP_SCHEMAS[0], fz.FDS) == frozenset({0, 1})
+
+    def test_q_segment_certified(self):
+        assert fz.Q_SEGMENT.is_certified(fz.CONFIG)
+
+    def test_q_cuisine_not_certified(self):
+        assert not fz.Q_CUISINE.is_certified(fz.CONFIG)
+
+
+class TestFodorsZagatMock:
+    @pytest.fixture(scope="class")
+    def records(self):
+        return fz.make_mock_dataset(n=100, seed=0)
+
+    def test_count(self, records):
+        assert len(records) == 200
+
+    def test_record_length(self, records):
+        for r in records:
+            assert len(r.to_world_row()) == fz.N_ATTRS
+
+    def test_overlap_agrees_across_sources(self, records):
+        """The two source-rows of a pair share pair_id and segment_bit (the overlap)."""
+        by_pair: dict[int, set] = {}
+        for r in records:
+            by_pair.setdefault(r[0], set()).add(r[1])
+        for pair_id, segs in by_pair.items():
+            assert len(segs) == 1, f"pair {pair_id} disagrees on segment_bit (overlap)"
+
+
+class TestFodorsZagatWitness:
+    def test_mock_contains_real_witness(self):
+        import numpy as np
+
+        from data.witness import observation_key
+
+        aug = [augmented_overlap(o, fz.FDS) for o in fz.OVERLAP_SCHEMAS]
+        records = fz.make_mock_dataset(n=200, seed=0)
+        groups: dict[tuple, set] = {}
+        for r in records:
+            w = np.array([r.to_world_row()], dtype=np.int32)
+            groups.setdefault(observation_key(w, aug), set()).add(r[2])  # cuisine_bit
+        assert [k for k, bits in groups.items() if len(bits) > 1], "mock must contain a witness"
+
+
+class TestFodorsZagatErrors:
+    def test_load_raises_on_missing_data(self, tmp_path):
+        with pytest.raises(FileNotFoundError, match="fodors.csv"):
+            fz.load_dataset(tmp_path)
+
+
+class TestFodorsZagatCLI:
+    def test_info_flag(self, capsys):
+        fz.main(["--info"])
+        assert "Fodors-Zagat" in capsys.readouterr().out
+
+    def test_mock_flag(self, capsys):
+        fz.main(["--mock"])
+        assert "Mock Fodors-Zagat" in capsys.readouterr().out

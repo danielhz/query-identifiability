@@ -3,7 +3,7 @@ PYTEST  := $(PYTHON) -m pytest
 RESULTS := results
 
 .PHONY: test test-verbose lint fmt typecheck coverage ci \
-        mini e1 e2 e3 ablation e4 analyze \
+        mini e1 e2 e3 ablation e4 analyze analyze-realworld \
         crosskg-data crosskg-data-api crosskg-probe crosskg-witness \
         collect-horeka collect-aisa submit-horeka submit-ablation clean
 
@@ -96,7 +96,13 @@ mini-e4:
 # Analysis (run locally after collecting results)
 # ---------------------------------------------------------------------------
 
-analyze: analyze-e1 analyze-e2 analyze-e3 analyze-ablation analyze-e4
+analyze: analyze-e1 analyze-e2 analyze-e3 analyze-ablation analyze-e4 analyze-realworld
+
+# Real-world result tables (RQ2/RQ3) + ML benchmark -> pgfdata CSV/TeX.
+# Generated from results/ JSONs so the paper never transcribes numbers by hand.
+analyze-realworld:
+	$(PYTHON) -m analysis.export_realworld_tables --results-dir $(RESULTS)
+	$(PYTHON) -m analysis.export_realworld_ml      --results-dir $(RESULTS)
 
 analyze-e1:
 	$(PYTHON) -m analysis.plot_error_floor     --results-dir $(RESULTS) --latex
