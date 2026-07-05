@@ -5,6 +5,7 @@
   "description": "Tools and experiments for certifying when a Boolean conjunctive query is identifiable from interface-visible views (CheckCert), prescribing the minimum overlap augmentation when it is not (Greedy-MinAug), and constructing explicit non-identifiability witnesses.",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/danielhz/query-identifiability",
+  "identifier": "https://doi.org/10.18419/DARUS-6292",
   "programmingLanguage": "Python",
   "version": "0.1.0",
   "author": [

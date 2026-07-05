@@ -14,4 +14,9 @@ authors:
     given-names: Daniel
 license: MIT
 repository-code: "https://github.com/danielhz/query-identifiability"
+repository-artifact: "https://doi.org/10.18419/DARUS-6292"
+identifiers:
+  - type: doi
+    value: 10.18419/DARUS-6292
+    description: "Archived artifacts (DaRUS)"
 version: "0.1.0"

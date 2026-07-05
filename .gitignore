@@ -37,11 +37,10 @@ checkpoints/
 # SLURM job logs (reproducible by re-running sbatch scripts)
 logs/
 
-# Anonymization key — maps real cluster hostnames; NEVER commit
-anon_key.json
-
-# Derived anonymized artifact bundle
-results_anon/
+# Coverage artifacts
+.coverage
+.coverage.*
+htmlcov/
 
 # Weights & Biases
 wandb/
