@@ -69,6 +69,6 @@ MIT — see [`LICENSE`](LICENSE).
 
 ## Citation
 
-If you use this software, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
+If you use this software, please cite: Thapa & Hernández, *Identifiability of Relational Queries in Multi-View Pretraining*, arXiv:2607.04735 (2026). Machine-readable metadata is in [`CITATION.cff`](CITATION.cff).
 
-Archived at DaRUS: <https://doi.org/10.18419/DARUS-6292> (please cite this DOI).
+Archived at DaRUS: <https://doi.org/10.18419/DARUS-6292>.

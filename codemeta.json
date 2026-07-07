@@ -6,6 +6,12 @@
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/danielhz/query-identifiability",
   "identifier": "https://doi.org/10.18419/DARUS-6292",
+  "referencePublication": {
+    "@type": "ScholarlyArticle",
+    "name": "Identifiability of Relational Queries in Multi-View Pretraining",
+    "identifier": "arXiv:2607.04735",
+    "url": "https://arxiv.org/abs/2607.04735"
+  },
   "programmingLanguage": "Python",
   "version": "0.1.0",
   "author": [

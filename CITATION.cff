@@ -20,3 +20,17 @@ identifiers:
     value: 10.18419/DARUS-6292
     description: "Archived artifacts (DaRUS)"
 version: "0.1.0"
+preferred-citation:
+  type: article
+  title: "Identifiability of Relational Queries in Multi-View Pretraining"
+  authors:
+    - family-names: Thapa
+      given-names: "Ratan Bahadur"
+    - family-names: Hernández
+      given-names: Daniel
+  year: 2026
+  url: "https://arxiv.org/abs/2607.04735"
+  identifiers:
+    - type: other
+      value: "arXiv:2607.04735"
+      description: "arXiv preprint"
